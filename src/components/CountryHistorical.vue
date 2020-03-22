@@ -22,10 +22,8 @@
             </section>
         </div>
 
-        <app-linechart  :dates="dates"
-                        :chartData="values"
-                        type="cases"
-                        :country="countryData[0].country"></app-linechart>
+        <app-linechart  :chartData="chartData"
+                        :options="options"></app-linechart>
     </div>
 </template>
 <script>
@@ -76,17 +74,39 @@ export default {
                 returnValues.push(value)
             }
             return returnValues
-        }
+        },
+        chartData: function () {
+            return       {
+                    labels: this.dates,
+                    datasets: [
+                    {
+                        label: "No occurrences",
+                        data: this.values,
+                        backgroundColor: "transparent",
+                        borderColor: "rgba(1, 116, 188, 0.50)",
+                        pointBackgroundColor: "rgba(171, 71, 188, 1)"
+                    }
+                    ]
+             }
+        },
      },
     watch: {
-        radio: function() {
+        chartData: function() {
             console.log('Changed')
-            this.$forceUpdate()
+
         }
     },
     data: function () {
         return {
-            radio: 'cases'
+            radio: 'cases',
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                display: true,
+                text: "Sweden"
+                }
+            }
         }
     },
     components: {

@@ -12,9 +12,10 @@ export default {
     'app-country-historical' : CountryHistorical,
   },
   methods: {
+    /*
     getSweden() {
       return this.$store.state.historicalData.filter(country => country.country === 'Sweden')
-    }
+    }*/
   },
   computed: {
     sweden: function() {
