@@ -2,19 +2,22 @@
     <div>
         <div>
             <section>
-                <div class="block">
+                <div class="block" type="is-dark">
                     <b-radio v-model="radio"
+                        type="is-dark"
                         name="name"
                         native-value="cases">
                         Cases
                     </b-radio>
                     <b-radio v-model="radio"
+                        type="is-dark"
                         name="name"
                         native-value="deaths">
                         Deaths
                     </b-radio>
                     <b-radio v-model="radio"
                         name="name"
+                        type="is-dark"
                         native-value="recovered">
                         Recovered
                     </b-radio>
@@ -80,7 +83,7 @@ export default {
                     labels: this.dates,
                     datasets: [
                     {
-                        label: "No occurrences",
+                        label: "# occurrences",
                         data: this.values,
                         backgroundColor: "transparent",
                         borderColor: "rgba(1, 116, 188, 0.50)",
@@ -90,12 +93,6 @@ export default {
              }
         },
      },
-    watch: {
-        chartData: function() {
-            console.log('Changed')
-
-        }
-    },
     data: function () {
         return {
             radio: 'cases',
@@ -104,7 +101,7 @@ export default {
                 maintainAspectRatio: false,
                 title: {
                 display: true,
-                text: "Sweden"
+                text: this.countryData[0].country
                 }
             }
         }

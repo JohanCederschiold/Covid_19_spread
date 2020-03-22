@@ -1,6 +1,8 @@
 <template>
   <div class="home">
+    <div class="body">
       <app-country-historical :countryData="sweden"></app-country-historical>
+    </div>
   </div>
 </template>
 
@@ -12,10 +14,6 @@ export default {
     'app-country-historical' : CountryHistorical,
   },
   methods: {
-    /*
-    getSweden() {
-      return this.$store.state.historicalData.filter(country => country.country === 'Sweden')
-    }*/
   },
   computed: {
     sweden: function() {
@@ -24,3 +22,10 @@ export default {
   }
 }
 </script>
+<style scoped>
+    .body {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 1%;
+    }
+</style>
