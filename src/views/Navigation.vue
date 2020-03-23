@@ -9,6 +9,9 @@
                 <b-navbar-item href="#">
                     <router-link to="About">About</router-link>
                 </b-navbar-item>
+                <b-navbar-item href="#">
+                    <router-link to="Credits">Credits</router-link>
+                </b-navbar-item>
             </template>
         </b-navbar>
         </div>

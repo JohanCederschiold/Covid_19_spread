@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     sweden: function() {
-      return this.$store.state.historicalData.filter(country => country.country === 'Sweden')
+      return this.$store.state.historicalData.filter(country => country.country === 'sweden')
     }
   }
 }
